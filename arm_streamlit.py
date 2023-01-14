@@ -15,7 +15,7 @@ with header:
     st.text("This application performs Association Rule Mining.")
 
 with st.sidebar:
-    st.header("Genetic parameters to manipulate")
+    st.header("Parameters to manipulate")
 
     num_generations = st.slider(
         "Number of generations", min_value=10, max_value=100, value=50, step=10)
@@ -69,14 +69,16 @@ with output:
         # Contains base item and add item
         pair = item[0] 
         items = [x for x in pair]
-        st.write("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1])
+        a = print("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1])
 
         #second index of the inner list
-        st.write("Support: " + str(round(item[1],3))
+        b = print("Support: " + str(round(item[1],3)))
 
         #third index of the list located at 0th
         #of the third index of the inner list
 
-        st.write("Confidence: " + str(round(item[2][0][2],4)))
-        st.write("Lift: " + str(round(item[2][0][3],4)))
-        st.write("=====================================")
+        c =print("Confidence: " + str(round(item[2][0][2],4)))
+        d = print("Lift: " + str(round(item[2][0][3],4)))
+        e = print("=====================================")
+        
+        st.write(a)
