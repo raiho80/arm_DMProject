@@ -18,7 +18,7 @@ with st.sidebar:
     st.header("Parameters to manipulate")
 
     supp_slider = st.slider(
-        "Minimum support", min_value=0.0, max_value=0.035, value=0.035, step = 0.010)
+        "Minimum support", min_value=0.0, max_value=0.035, value=0.035, step = 0.005)
 
     conf_slider = st.slider(
         "Minimum confidence", min_value=0.0, max_value=0.2, value=0.2)
