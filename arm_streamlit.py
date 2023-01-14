@@ -82,3 +82,7 @@ with output:
         e = "====================================="
         
         st.write(a)
+        st.write(b)
+        st.write(c)
+        st.write(d)
+        st.write(e)
