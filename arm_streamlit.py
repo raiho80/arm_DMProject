@@ -81,4 +81,4 @@ with output:
         d = print("Lift: " + str(round(item[2][0][3],4)))
         e = print("=====================================")
         
-        st.write(a)
+        st.write("Rule)
