@@ -12,7 +12,8 @@ output = st.container()
 # streamlit body
 with header:
     st.title("Apriori Algorithm")
-    st.text("This application performs Association Rule Mining on the items carried to laundry and generate rules based on them.")
+    st.text("This application performs Association Rule Mining on the")
+    st.text("items carried to laundry and generate rules based on them.")
 
 with st.sidebar:
     st.header("Parameters to manipulate")
