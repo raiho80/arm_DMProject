@@ -60,20 +60,23 @@ len(association_results)
 
 cnt =0
 
-for item in association_results:
-    cnt += 1
-    # first index of the inner list
-    # Contains base item and add item
-    pair = item[0] 
-    items = [x for x in pair]
-    print("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1])
+with output:
+    st.header("Output")
+    st.text("The following are the rules created based on ARM.")
+    for item in association_results:
+        cnt += 1
+        # first index of the inner list
+        # Contains base item and add item
+        pair = item[0] 
+        items = [x for x in pair]
+        print("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1])
 
-    #second index of the inner list
-    print("Support: " + str(round(item[1],3)))
+        #second index of the inner list
+        print("Support: " + str(round(item[1],3)))
 
-    #third index of the list located at 0th
-    #of the third index of the inner list
+        #third index of the list located at 0th
+        #of the third index of the inner list
 
-    print("Confidence: " + str(round(item[2][0][2],4)))
-    print("Lift: " + str(round(item[2][0][3],4)))
-    print("=====================================")
+        print("Confidence: " + str(round(item[2][0][2],4)))
+        print("Lift: " + str(round(item[2][0][3],4)))
+        print("=====================================")
