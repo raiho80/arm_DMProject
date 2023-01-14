@@ -12,8 +12,7 @@ output = st.container()
 # streamlit body
 with header:
     st.title("Apriori Algorithm")
-    st.text("This application performs Association Rule Mining on the")
-    st.text("items carried to laundry and generate rules based on them.")
+    st.text("This application performs Association Rule Mining on the items carried to laundry and generate rules based on them.")
 
 with st.sidebar:
     st.header("Parameters to manipulate")
@@ -25,7 +24,7 @@ with st.sidebar:
         "Minimum confidence", min_value=0.0, max_value=0.2, value=0.2)
 
     lift_slider = st.slider(
-        "Minimum lift", min_value=0, max_value=3, value=3)
+        "Minimum lift", min_value=1, max_value=3, value=5)
 
     length_slider = st.slider(
         "Minimum length", min_value=0, max_value=2, value=2)
