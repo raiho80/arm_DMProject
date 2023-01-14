@@ -69,14 +69,14 @@ with output:
         # Contains base item and add item
         pair = item[0] 
         items = [x for x in pair]
-        print("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1])
+        st.write(print("(Rule " + str(cnt) + ") " + items[0] + " -> " + items[1]))
 
         #second index of the inner list
-        print("Support: " + str(round(item[1],3)))
+        st.write(print("Support: " + str(round(item[1],3)))
 
         #third index of the list located at 0th
         #of the third index of the inner list
 
-        print("Confidence: " + str(round(item[2][0][2],4)))
-        print("Lift: " + str(round(item[2][0][3],4)))
-        print("=====================================")
+        st.write(print("Confidence: " + str(round(item[2][0][2],4))))
+        st.write(print("Lift: " + str(round(item[2][0][3],4))))
+        st.write(print("====================================="))
