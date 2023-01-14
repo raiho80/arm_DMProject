@@ -18,16 +18,16 @@ with st.sidebar:
     st.header("Parameters to manipulate")
 
     supp_slider = st.slider(
-        "Minimum support", min_value=0.0, max_value=0.055, value=0.035)
+        "Minimum support", min_value=0.0, max_value=0.055, value=0.035, step = 0.010)
 
     conf_slider = st.slider(
         "Minimum confidence", min_value=0.0, max_value=0.5, value=0.2)
 
     lift_slider = st.slider(
-        "Minimum lift", min_value=0, max_value=5, value=3)
+        "Minimum lift", min_value=0, max_value=3, value=3)
 
     length_slider = st.slider(
-        "Minimum length", min_value=0, max_value=5, value=2)
+        "Minimum length", min_value=0, max_value=2, value=2)
 
     
 df_arm = pd.read_csv('dataset_master.csv')
