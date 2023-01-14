@@ -12,25 +12,23 @@ output = st.container()
 # streamlit body
 with header:
     st.title("Apriori Algorithm")
-    st.text("This application performs Association Rule Mining.")
+    st.text("This application performs Association Rule Mining on the items carried to laundry and generate rules based on them.")
 
 with st.sidebar:
     st.header("Parameters to manipulate")
 
-    num_generations = st.slider(
-        "Number of generations", min_value=10, max_value=100, value=50, step=10)
+    supp_slider = st.slider(
+        "Minimum support", min_value=0.0, max_value=0.055, value=0.035)
 
-    population_size = st.slider(
-        "Population size", min_value=10, max_value=200, value=70, step=10)
+    conf_slider = st.slider(
+        "Minimum confidence", min_value=0.0, max_value=0.5, value=0.2)
 
-    random_sel = st.slider(
-        "Random selection", min_value=0.0, max_value=0.1, value=0.05)
+    lift_slider = st.slider(
+        "Minimum lift", min_value=0, max_value=5, value=3)
 
-    mutation_prob = st.slider(
-        "Mutation probability", min_value=0.0, max_value=0.1, value=0.01)
+    length_slider = st.slider(
+        "Minimum length", min_value=0, max_value=5, value=2)
 
-    crossover_k = st.slider(
-        "Crossover points", min_value=1, max_value=3, value=1, step=1)
     
 df_arm = pd.read_csv('dataset_master.csv')
 df_arm=df_arm.drop(["Date", "Time", "Race", "Gender", "Body_Size", "Age_Range", "With_Kids",
@@ -52,9 +50,9 @@ records = []
 for i in range (0, df_arm.shape[0]):
     records.append([str(df_arm.values[i,j]) for j in range(0,df_arm.shape[1])])
 
-association_rules = apriori(records,min_support=0.035,
-                           min_confidence=0.2,
-                           min_lift=3, min_length=2)
+association_rules = apriori(records,min_support=supp_slider,
+                           min_confidence=conf_slider,
+                           min_lift=lift_slider, min_length=length_slider)
 association_results = list(association_rules)
 len(association_results)
 
