@@ -24,7 +24,7 @@ with st.sidebar:
         "Minimum confidence", min_value=0.0, max_value=0.2, value=0.2)
 
     lift_slider = st.slider(
-        "Minimum lift", min_value=1, max_value=3, value=5)
+        "Minimum lift", min_value=2, max_value=3, value=3)
 
     length_slider = st.slider(
         "Minimum length", min_value=0, max_value=2, value=2)
